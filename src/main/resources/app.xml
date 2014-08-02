@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    
+    <bean id="persona" class="com.rtorres.springagosto.model.Persona">
+        <property name="nombre" value="René Torres" ></property>
+    </bean>
+
+    <!--Valores cosntructor -->
+    <bean id="bob" class="com.rtorres.springagosto.model.Musico">
+        <constructor-arg value="5" />
+    </bean>
+        
+    <!--Referencia cosntructor -->
+    <bean id="instrumento" class="com.rtorres.springagosto.model.Instrumento">
+        <property name="Marca" value="fender"/>
+    </bean>
+     
+    <bean id="slash" class="com.rtorres.springagosto.model.Musico">
+        <constructor-arg value="5"/>
+        <constructor-arg ref="instrumento"/>
+    </bean>     
+     
+     <!--Valores a traves de Setter -->
+    <bean id="lennon" class="com.rtorres.springagosto.model.Musico">
+       <property name="nombre" value="John Lennon" />
+       <property name="numeroCanciones" value="4"/>
+    </bean>     
+       
+</beans>

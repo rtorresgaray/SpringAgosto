@@ -1,5 +1,9 @@
 package com.rtorres.springagosto;
 
+import com.rtorres.springagosto.model.Persona;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * Hello world!
  *
@@ -8,6 +12,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        ApplicationContext context = new ClassPathXmlApplicationContext("app.xml");
+        Persona persona = (Persona) context.getBean("persona");
+        
+        System.out.println(persona.getNombre());
     }
 }
