@@ -1,6 +1,6 @@
 package com.rtorres.springagosto;
 
-import com.rtorres.springagosto.model.Persona;
+import com.rtorres.springagosto.beans.model.Persona;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

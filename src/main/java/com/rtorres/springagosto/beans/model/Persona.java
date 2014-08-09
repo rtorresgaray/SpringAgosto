@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.rtorres.springagosto.model;
+package com.rtorres.springagosto.beans.model;
 
 /**
  *

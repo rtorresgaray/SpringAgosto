@@ -4,29 +4,61 @@
 
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
     
-    <bean id="persona" class="com.rtorres.springagosto.model.Persona">
+    <bean id="persona" class="com.rtorres.springagosto.model.model.Persona">
         <property name="nombre" value="René Torres" ></property>
     </bean>
 
     <!--Valores cosntructor -->
-    <bean id="bob" class="com.rtorres.springagosto.model.Musico">
+    <bean id="bob" class="com.rtorres.springagosto.model.model.Musico">
         <constructor-arg value="5" />
     </bean>
         
     <!--Referencia cosntructor -->
-    <bean id="instrumento" class="com.rtorres.springagosto.model.Instrumento">
+    <bean id="instrumento" class="com.rtorres.springagosto.model.model.Instrumento">
         <property name="Marca" value="fender"/>
     </bean>
      
-    <bean id="slash" class="com.rtorres.springagosto.model.Musico">
+    <bean id="slash" class="com.rtorres.springagosto.model.model.Musico">
         <constructor-arg value="5"/>
         <constructor-arg ref="instrumento"/>
     </bean>     
      
      <!--Valores a traves de Setter -->
-    <bean id="lennon" class="com.rtorres.springagosto.model.Musico">
+    <bean id="lennon" class="com.rtorres.springagosto.model.model.Musico">
        <property name="nombre" value="John Lennon" />
        <property name="numeroCanciones" value="4"/>
-    </bean>     
+       <property name="instrumento">
+            <bean class="com.rtorres.springagosto.model.Guitarra">
+                <property name="marca" value="Gibson"/>
+            </bean>        
+      </property>
+    </bean>
+    
+    <bean id="guitarra" class="com.rtorres.springagosto.model.model.Guitarra">
+        <property name="Marca" value="mi-guitarra"/>
+    </bean>
+    
+    <bean id="bateria" class="com.rtorres.springagosto.model.model.Bateria">
+        <property name="Marca" value="mi-bateria"/>
+    </bean>    
+    
+    <bean id="jimmy" class="com.rtorres.springagosto.model.model.Musico">
+        <property name="instrumentos">
+            <list>
+                <ref bean="guitarra"/>
+                <ref bean="bateria"/>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="noel" class="com.rtorres.springagosto.model.model.Musico" autowire="byName"/>    
+    
+    <bean id="bajo" class="com.rtorres.springagosto.model.model.Instrumento" primary="true">    
+        <property name="marca" value="yamaha"/>
+    </bean>
+    
+    <bean id="cerati" class="com.rtorres.springagosto.model.model.Musico" autowire="byType"/>    
+    
+    <bean id="charly" class="com.rtorres.springagosto.model.model.Musico" autowire="constructor"/>    
        
 </beans>
