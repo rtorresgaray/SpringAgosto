@@ -11,5 +11,9 @@
         <property name="url" value="jdbc:mysql://localhost:3306/spring" />
         <property name="username" value="root" />
         <property name="password" value="mysql" />
+        
+        
     </bean>
+    
+    <bean id="programaDAO" class="com.rtorres.springagosto.jdcb.dao.ProgramaDAOJ" autowire="byType"/>
 </beans>
