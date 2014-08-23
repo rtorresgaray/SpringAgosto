@@ -2,10 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.rtorres.springagosto.jdcb.dao.curso;
+package com.rtorres.springagosto.orm.dao;
 
-import com.rtorres.springagosto.jdcb.helper.GenericDAO;
-import com.rtorres.springagosto.jdcb.model.Curso;
+
+
+import com.rtorres.springagosto.orm.helper.GenericDAO;
+import com.rtorres.springagosto.orm.model.Curso;
 
 /**
  *
