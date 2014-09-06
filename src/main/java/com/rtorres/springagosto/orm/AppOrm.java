@@ -20,8 +20,9 @@ public class AppOrm {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("hibernetDB.xml");
- /*       AppOrm.docInsert(context); */
-        AppOrm.doUpdate(context);
+        //AppOrm.docInsert(context); 
+        //AppOrm.doUpdate(context);
+        AppOrm.doDelete(context);
         AppOrm.docList(context);    
             
     }
@@ -45,11 +46,19 @@ public class AppOrm {
     
     public static void doUpdate(ApplicationContext context) {
         ProgramaDAO programaDAO = (ProgramaDAO) context.getBean("programaDAO");
-        Programa programa = programaDAO.find(9l);
+        Programa programa = programaDAO.find(1l);
         programa.setCodigo("222");
         programa.setDescripcion("Desarrollo de Software");
         programa.setNombre("APP 2");
         programaDAO.update(programa);
     } 
     
+    public static void doDelete(ApplicationContext context) {
+        ProgramaDAO programaDAO = (ProgramaDAO) context.getBean("programaDAO");
+        Programa programa = programaDAO.find(1l);
+        programaDAO.delete(programa);
+        }
+    
+    
+   
 }

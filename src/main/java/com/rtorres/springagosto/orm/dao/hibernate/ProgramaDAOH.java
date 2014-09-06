@@ -7,7 +7,9 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 @Repository("programaDAO")
 public class ProgramaDAOH extends BaseHibernetDAO implements ProgramaDAO{
 
@@ -34,11 +36,6 @@ public class ProgramaDAOH extends BaseHibernetDAO implements ProgramaDAO{
         this.getSession().delete(t);
     }
     
-
-    public void delete(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public Programa find(String codigo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
